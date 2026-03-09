@@ -44,6 +44,14 @@ class Book:
     def get_notes_of_page(self, page: int) -> list[Note]:
         return [nota for nota in self.notes if nota.page == page]
 
+    def page_with_most_notes(self) -> int:
+        if not self.notes:
+            return -1
+
+        conteo_paginas = {}
+        for nota in self.notes:
+            conteo_paginas[nota.page] = conteo_paginas.get(nota.page, 0) + 1
+
 
 
 
